@@ -13,6 +13,7 @@
 
 	<modules>
 		<module>patients/patient</module>
+		<module>insolvent/insolvent</module>
 	</modules>
 
 	<properties>
