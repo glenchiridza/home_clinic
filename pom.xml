@@ -34,14 +34,45 @@
 
 	<properties>
 		<java.version>17</java.version>
+		<maven.compiler.release>17</maven.compiler.release>
+		<spring.boot.maven.plugin.version>3.3.2</spring.boot.maven.plugin.version>
+		<spring.boot.dependecies.version>3.3.2</spring.boot.dependecies.version>
 	</properties>
-	<dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring.boot.dependecies.version}</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>
 
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+		</dependency>
 	</dependencies>
+
 
 	<build>
 		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+					<version>${spring.boot.maven.plugin.version}</version>
+				</plugin>
 
+			</plugins>
 		</pluginManagement>
 	</build>
 
