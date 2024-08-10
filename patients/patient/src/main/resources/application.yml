@@ -1,0 +1,19 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: Patient
+
+  datasource:
+    username: root
+    password: ostentatious
+    url: jdbc:postgresql://localhost:5432/patient
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
