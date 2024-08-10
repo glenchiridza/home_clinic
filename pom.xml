@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.glenchiridza</groupId>
+	<artifactId>home_clinic_services</artifactId>
+	<version>1.0.0</version>
+	<name>home_clinic_services</name>
+	<description>home_clinic_services</description>
+	<url>glenchiridza.web.app</url>
+	<licenses>
+		<license/>
+	</licenses>
+	<developers>
+		<developer>
+			<id>glencee</id>
+			<name>Glen Chiridza</name>
+			<email>glenchiridz@gmail.com</email>
+			<url>glenchiridza.web.app</url>
+			<organization>NarrowValley</organization>
+			<organizationUrl>glenchiridza.web.app</organizationUrl>
+			<roles>
+				<role>Machine Learning Engineer</role>
+				<role>Software Engineer</role>
+				<role>Data Scientist</role>
+			</roles>
+			<timezone>Zimbabwe/Harare</timezone>
+			<properties>
+<!--				<picUrl>http://www.github.com/glenchiridza/pic</picUrl>-->
+			</properties>
+		</developer>
+	</developers>
+
+	<properties>
+		<java.version>17</java.version>
+	</properties>
+	<dependencies>
+
+	</dependencies>
+
+	<build>
+		<pluginManagement>
+
+		</pluginManagement>
+	</build>
+
+</project>
