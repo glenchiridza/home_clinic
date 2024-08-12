@@ -6,7 +6,9 @@ import org.glenchiridza.patient.repository.PatientRepository;
 import org.glenchiridza.patient.service.api.PatientService;
 import org.glenchiridza.patient.utils.PatientRegistrationRequest;
 import org.glenchiridza.restclients.insolvent.InsolventClient;
+import org.glenchiridza.restclients.notifications.NotificationClient;
 import org.glenchiridza.restclients.util.InsolventCheckResponse;
+import org.glenchiridza.restclients.util.NotificationRequest;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -16,6 +18,8 @@ public class PatientServiceImpl implements PatientService {
     private final PatientRepository patientRepository;
 //    private final RestTemplate restTemplate;
     private final InsolventClient insolventClient;
+
+    private final NotificationClient notificationClient;
 
     @Override
     public void registerPatient(PatientRegistrationRequest requestDto) {
@@ -47,8 +51,16 @@ public class PatientServiceImpl implements PatientService {
             throw new IllegalStateException("This patient doesn't settle debts and currently has other debts");
         }
 
-        //todo: send notification
+        //todo: make it async i.e add to queue
 
+        notificationClient.sendNotification(
+                new NotificationRequest(
+                        patient.getId(),
+                        patient.getEmail(),
+                        String.format("Hi %s, You are now registered as a patient of Home Clinic ...",
+                                patient.getFirstName())
+                )
+        );
 
     }
 }
