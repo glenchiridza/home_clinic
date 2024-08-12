@@ -15,6 +15,7 @@
 		<module>patients/patient</module>
 		<module>insolvent/insolvent</module>
 		<module>eureka-server/eureka-server</module>
+		<module>rest_clients/rest_clients</module>
 	</modules>
 
 	<properties>
@@ -52,6 +53,10 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
 	</dependencies>
 

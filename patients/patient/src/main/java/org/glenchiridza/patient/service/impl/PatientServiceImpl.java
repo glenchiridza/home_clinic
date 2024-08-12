@@ -35,7 +35,7 @@ public class PatientServiceImpl implements PatientService {
         patientRepository.saveAndFlush(patient);
 
         InsolventCheckResponse insolventCheckResponse =restTemplate.getForObject(
-                "http://localhost:8090/api/insolvents/{patientId}",
+                "http://INSOLVENT/api/insolvents/{patientId}",
                 InsolventCheckResponse.class,
                 patient.getId()
         );
