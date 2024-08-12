@@ -15,7 +15,7 @@ spring:
         format_sql: true
     hibernate:
       ddl-auto: update
-    database-platform: org.hibernate.dialect.PostgresSQLDialect
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     database: postgresql
 
 eureka:
