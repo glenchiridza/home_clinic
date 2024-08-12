@@ -3,7 +3,7 @@ package org.glenchiridza.insolvent.controller;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.glenchiridza.insolvent.service.api.InsolventCheckService;
-import org.glenchiridza.insolvent.util.InsolventCheckResponse;
+import org.glenchiridza.restclients.insolvent.util.InsolventCheckResponse;
 import org.springframework.web.bind.annotation.*;
 
 @Slf4j
