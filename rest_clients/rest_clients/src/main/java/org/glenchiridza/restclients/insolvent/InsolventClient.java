@@ -1,6 +1,6 @@
 package org.glenchiridza.restclients.insolvent;
 
-import org.glenchiridza.restclients.insolvent.util.InsolventCheckResponse;
+import org.glenchiridza.restclients.util.InsolventCheckResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

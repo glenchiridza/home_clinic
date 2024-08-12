@@ -6,7 +6,7 @@ import org.glenchiridza.patient.repository.PatientRepository;
 import org.glenchiridza.patient.service.api.PatientService;
 import org.glenchiridza.patient.utils.PatientRegistrationRequest;
 import org.glenchiridza.restclients.insolvent.InsolventClient;
-import org.glenchiridza.restclients.insolvent.util.InsolventCheckResponse;
+import org.glenchiridza.restclients.util.InsolventCheckResponse;
 import org.springframework.stereotype.Service;
 
 @Service
