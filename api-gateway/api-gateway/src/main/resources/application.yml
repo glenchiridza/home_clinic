@@ -1,8 +1,15 @@
 server:
-  port: 8082
+  port: 8092
 spring:
   application:
     name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: patient
+          uri: lb://PATIENT
+          predicates:
+            - Path=/api/patients/**
 
 eureka:
   instance:
