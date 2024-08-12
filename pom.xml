@@ -16,6 +16,7 @@
 		<module>insolvent/insolvent</module>
 		<module>eureka-server/eureka-server</module>
 		<module>rest_clients/rest_clients</module>
+		<module>notification/notification</module>
 	</modules>
 
 	<properties>

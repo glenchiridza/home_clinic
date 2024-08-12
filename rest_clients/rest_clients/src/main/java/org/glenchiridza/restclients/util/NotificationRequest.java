@@ -1,7 +1,7 @@
 package org.glenchiridza.restclients.util;
 
 public record NotificationRequest(
-        String toPatientId,
+        Integer toPatientId,
         String toPatientEmail,
         String message
 ){
