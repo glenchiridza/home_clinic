@@ -18,7 +18,8 @@
 		<module>rest_clients/rest_clients</module>
 		<module>notification/notification</module>
         <module>api-gateway/api-gateway</module>
-    </modules>
+		<module>advanced_message_queue_protocol/advanced_message_queue_protocol</module>
+	</modules>
 
 	<properties>
 		<java.version>17</java.version>
