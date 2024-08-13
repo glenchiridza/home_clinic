@@ -58,6 +58,16 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.glenchiridza</groupId>
+            <artifactId>advanced_message_queue_protocol</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.glenchiridza</groupId>
             <artifactId>rest_clients</artifactId>
             <version>1.0.0</version>
