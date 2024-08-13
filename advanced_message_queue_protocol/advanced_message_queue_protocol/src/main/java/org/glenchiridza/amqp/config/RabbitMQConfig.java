@@ -2,6 +2,7 @@ package org.glenchiridza.amqp.config;
 
 import lombok.AllArgsConstructor;
 import org.springframework.amqp.core.AmqpTemplate;
+import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -24,7 +25,7 @@ public class RabbitMQConfig {
     }
 
 
-
+    //SEND MESSAGES TO THE QUEUE
     @Bean
     public AmqpTemplate amqpTemplate() {
         RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory());
@@ -33,6 +34,17 @@ public class RabbitMQConfig {
         return rabbitTemplate;
     }
 
+    //LISTEN TO MESSAGES FROM THE QUEUE
+    @Bean
+    public SimpleRabbitListenerContainerFactory rabbitListenerContainerFactory() {
+        SimpleRabbitListenerContainerFactory factory = new SimpleRabbitListenerContainerFactory();
+        factory.setConnectionFactory(connectionFactory());
+        factory.setMessageConverter(jacksonConverter());
+        return factory;
+    }
+
+
+    //USING THE JSON CONVERTER
     @Bean
     public MessageConverter jacksonConverter(){
         Jackson2JsonMessageConverter messageConverter =
