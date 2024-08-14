@@ -30,3 +30,15 @@ public class Patient {
 
     //later add next of kin
 }
+
+
+
+//example payload
+//{
+//        "firstName":"Glen",
+//        "lastName":"Chiridza",
+//        "email":"glenchiridz@gmail.com",
+//        "phone":"0774291926",
+//        "nationalId":"43-232323f23",
+//        "address":"11 Marble Street"
+//        }

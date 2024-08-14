@@ -19,3 +19,5 @@ public class RabbitMQMessageProducer {
     }
 
 }
+
+// ended at 57_7

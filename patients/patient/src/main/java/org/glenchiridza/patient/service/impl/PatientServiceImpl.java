@@ -1,6 +1,7 @@
 package org.glenchiridza.patient.service.impl;
 
 import lombok.AllArgsConstructor;
+import org.glenchiridza.amqp.config.RabbitMQMessageProducer;
 import org.glenchiridza.patient.model.Patient;
 import org.glenchiridza.patient.repository.PatientRepository;
 import org.glenchiridza.patient.service.api.PatientService;
@@ -18,8 +19,8 @@ public class PatientServiceImpl implements PatientService {
     private final PatientRepository patientRepository;
 //    private final RestTemplate restTemplate;
     private final InsolventClient insolventClient;
-
-    private final NotificationClient notificationClient;
+//    private final NotificationClient notificationClient;
+    private final RabbitMQMessageProducer rabbitMQMessageProducer;
 
     @Override
     public void registerPatient(PatientRegistrationRequest requestDto) {
@@ -51,16 +52,19 @@ public class PatientServiceImpl implements PatientService {
             throw new IllegalStateException("This patient doesn't settle debts and currently has other debts");
         }
 
-        //todo: make it async i.e add to queue
 
-        notificationClient.sendNotification(
-                new NotificationRequest(
-                        patient.getId(),
-                        patient.getEmail(),
-                        String.format("Hi %s, You are now registered as a patient of Home Clinic ...",
-                                patient.getFirstName())
-                )
+        NotificationRequest notificationRequestDto = new NotificationRequest(
+                patient.getId(),
+                patient.getEmail(),
+                String.format("Hi %s, You are now registered as a patient of Home Clinic ...",
+                        patient.getFirstName())
         );
+
+        rabbitMQMessageProducer.publish(
+                notificationRequestDto,
+                "internal.exchange",
+                "internal.notification.routing-key"
+                );
 
     }
 }
