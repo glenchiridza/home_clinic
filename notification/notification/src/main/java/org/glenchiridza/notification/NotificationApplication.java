@@ -1,25 +1,25 @@
 package org.glenchiridza.notification;
 
-import org.glenchiridza.amqp.config.RabbitMQMessageProducer;
-import org.glenchiridza.notification.config.NotificationConfig;
-import org.glenchiridza.notification.model.Notification;
-import org.springframework.boot.CommandLineRunner;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration;
-import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication(
         scanBasePackages = {
                 "org.glenchiridza.notification",
-                "org.glenchiridza.amqp"
+                "org.glenchiridza.notification.rabbitmq",
+                "org.glenchiridza.amqp",
         },exclude = {
         RabbitAutoConfiguration.class,
 }
 )
+@Slf4j
 public class NotificationApplication {
     public static void main(String[] args) {
         SpringApplication.run(NotificationApplication.class, args);
+
     }
 
 //    @Bean
