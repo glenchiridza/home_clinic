@@ -8,9 +8,9 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
 
+@Slf4j
 @Component
 @AllArgsConstructor
-@Slf4j
 public class NotificationConsumer {
 
     private final NotificationService notificationService;

@@ -4,12 +4,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration;
-import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication(
         scanBasePackages = {
                 "org.glenchiridza.notification",
-                "org.glenchiridza.notification.rabbitmq",
                 "org.glenchiridza.amqp",
         },exclude = {
         RabbitAutoConfiguration.class,
@@ -32,4 +30,5 @@ public class NotificationApplication {
 //    }
 //
 //    record Person(String name,String surname,String jobTitle){}
+
 }
